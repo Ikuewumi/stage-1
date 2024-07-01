@@ -1,0 +1,307 @@
+:root {
+	/* COLORS */
+	--clr-content-1: #292729;
+	--clr-content-2: #404B56;
+	--clr-content-3: #8C9399;
+	--clr-content-4: #8C9399;
+	--clr-content-5: #292729;
+
+	--clr-off-white: #404B56;
+	--clr-bg: #8C9399;
+	--clr-border: #E6E7E9;
+	--clr-bg-secondary: #F5F6F6;
+	--clr-bg-secondary-low: #FCFCFC;
+
+	--clr-bg-primary: #FFFFFF;
+
+	--clr-primary-base: #160245;
+	--clr-primary-hover: #9186FF;
+	--clr-primary-pressed: #5E53CC;
+	--clr-primary-border: #E3E1FF;
+	--clr-primary-bg: #F8F7FF;
+
+
+	/*FONT-SIZES*/
+	--fs-xs: clamp(0.7rem, 0.7rem + 0.5vw, 0.75rem);
+	--fs-sm: clamp(0.8rem, 0.8rem + 0.65vw, 0.875rem);
+	--fs-md: clamp(0.875rem, 0.875rem + 0.65vw, 1rem);
+	--fs-lg: clamp(1rem, 1rem + 0.65vw, 1.125rem);
+	--fs-xl: clamp(1.125rem, 1.125rem + 0.65vw, 1.25rem);
+	--fs-display-xs: clamp(1.25rem, 1.25rem + 0.65vw, 1.5rem);
+	--fs-display-sm: clamp(1.5rem, 1.5rem + 0.65vw, 1.875rem);
+	--fs-display-md: clamp(2rem, 2rem + 1vw, 2.25rem);
+	--fs-display-lg: clamp(2.75rem, 2.25rem + 1vw, 3rem);
+	--fs-display-xl: clamp(3.5rem, 3.5rem + 1vw, 3.75rem);
+	--fs-display-2xl: clamp(4.25rem, 4.25rem + 1vw, 4.5rem);
+
+
+	--font-sans: 'Manrope', 'Epilogue', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-display: 'Epilogue', var(--font-sans);
+
+	font-family: var(--font-sans);
+	color: var(--clr-content-1);
+	font-size: 15px;
+	color-scheme: light;
+
+
+}
+
+
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+
+
+body {
+	padding-block: 0.5rem 2rem;
+}
+
+body,
+.sgrid {
+	--offset: 0.85rem;
+	--content-max-width: 800px;
+	display: grid;
+	background: var(--clr-bg-primary);
+	grid-template-columns:
+		[full-start left-start] minmax(var(--offset), auto) [content-start right-start] minmax(auto, var(--content-max-width)) [content-end left-end] minmax(var(--offset), auto) [right-end full-end];
+
+}
+
+
+body>*,
+.sgrid>* {
+	grid-column: content;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+strong {
+	line-height: 0.95;
+}
+
+.header {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+
+.header-logo {
+	font-size: calc(var(--fs-display-lg) * 1.2);
+	font-weight: 300;
+	font-family: var(--font-display);
+	letter-spacing: -4px;
+	color: var(--clr-content-1);
+	padding-top: 0.5ch;
+}
+
+
+.header-link {
+	font-size: var(--fs-md);
+	padding: 0.5rem 0.75rem 0.55rem;
+	background: var(--clr-primary-pressed);
+	color: var(--clr-bg-secondary);
+	text-decoration: none;
+	border-radius: 0.5rem;
+}
+
+.header-link:hover,
+.header-link:focus {
+	background: var(--clr-bg-primary);
+	color: var(--clr-primary-pressed);
+	outline: 2px solid var(--clr-primary-pressed);
+}
+
+
+
+
+
+.hero {
+	--s: 84px;
+	/* control the size*/
+	--c1: #f2f2f235;
+	--c2: #cdcbcc25;
+	--c3: #99999915;
+
+	--_g: 0 120deg, #0000 0;
+	background:
+		conic-gradient(from 0deg at calc(500%/6) calc(100%/3), var(--c3) var(--_g)),
+		conic-gradient(from -120deg at calc(100%/6) calc(100%/3), var(--c2) var(--_g)),
+		conic-gradient(from 120deg at calc(100%/3) calc(500%/6), var(--c1) var(--_g)),
+		conic-gradient(from 120deg at calc(200%/3) calc(500%/6), var(--c1) var(--_g)),
+		conic-gradient(from -180deg at calc(100%/3) 50%, var(--c2) 60deg, var(--c1) var(--_g)),
+		conic-gradient(from 60deg at calc(200%/3) 50%, var(--c1) 60deg, var(--c3) var(--_g)),
+		conic-gradient(from -60deg at 50% calc(100%/3), var(--c1) 120deg, var(--c2) 0 240deg, var(--c3) 0);
+	background-size: calc(var(--s)*1.732) var(--s);
+
+	margin-top: 1rem;
+	padding: 3rem 1rem;
+	display: flex;
+	flex-flow: column;
+	gap: 1.5rem;
+	align-items: center;
+	justify-content: center;
+	min-height: 300px;
+	border: 2px solid var(--clr-primary-border);
+	border-radius: 0.25rem;
+	text-align: center;
+}
+
+
+
+.hero-heading {
+	font-size: clamp(1.75rem, 1.75rem + 4vw, 5.5ch);
+	line-height: 0.95;
+	margin-top: -0.5rem;
+}
+
+.hero-subheading {
+	font-size: 2ch;
+	margin-top: 0.5rem;
+}
+
+
+
+/**GOALS SECTION**/
+.goals {
+	margin-top: 2rem;
+}
+
+.goals-heading {
+	font-size: calc(var(--fs-display-lg) * 0.75);
+}
+
+.goals-description {
+	font-size: calc(var(--fs-md) * 1.25);
+	margin-top: 0.75rem;
+	line-height: 1.25;
+}
+
+
+.goals-list {
+	--goals-gap: 1.25rem 1rem;
+	list-style: none;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--goals-gap);
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+@media (min-width: 800px) {
+	.goals-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.goals-li {
+	display: contents;
+}
+
+.goals-article {
+	display: grid;
+	gap: 0.25rem;
+	padding: 0.85rem 1rem 0.9rem;
+	border: 1px solid hsl(0deg 0% 0% / 10%);
+	border-radius: 0.5rem;
+	height: fit-content;
+	align-self: start;
+	font-size: calc(var(--fs-md) * 1);
+}
+
+.goals-title {
+	font-weight: 600;
+	font-size: calc(var(--fs-md) * 1.35);
+}
+
+
+
+
+/*REQUIRED DATA*/
+.data {
+	display: grid;
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.data-heading {
+	font-size: calc(var(--fs-display-lg) * 0.75);
+}
+
+.data-figure {
+	overflow: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.data-list {
+	display: grid;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.data-item {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	gap: 0.25rem;
+	align-self: stretch;
+	border-bottom: 1px solid var(--clr-primary-border);
+	padding: 0.75rem 0;
+	font-size: calc(var(--fs-md) * 1.25);
+	font-weight: 700;
+}
+
+
+.data-item dt {
+	font-weight: 400;
+	color: var(--clr-content-4);
+}
+
+.data-item dd {
+	margin-inline-start: auto;
+}
+
+
+/*FOOTER*/
+.footer {
+	display: grid;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2.5rem;
+	text-align: center;
+	font-size: calc(var(--fs-md) * 1.25);
+}
+
+.footer-links {
+	display: flex;
+	gap: 0.5rem;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+}
+
+.footer-li {
+	display: contents;
+}
+
+.footer-link {
+	color: var(--clr-primary-pressed);
+	font-weight: 500;
+}
