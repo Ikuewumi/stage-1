@@ -1,5 +1,3 @@
-console.log(document)
-
 const SELECTORS = {
 	CURRENT_TIME: `[data-testid="currentTimeUTC"]`,
 	CURRENT_DAY: `[data-testid="currentDay"]`

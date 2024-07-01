@@ -210,7 +210,7 @@ strong {
 
 .goals-article {
 	display: grid;
-	gap: 0.25rem;
+	gap: 0.5rem;
 	padding: 0.85rem 1rem 0.9rem;
 	border: 1px solid hsl(0deg 0% 0% / 10%);
 	border-radius: 0.5rem;
@@ -218,6 +218,11 @@ strong {
 	align-self: start;
 	font-size: calc(var(--fs-md) * 1);
 	cursor: pointer;
+}
+
+.goals-article a {
+	color: var(--clr-primary-pressed);
+	font-weight: 500;
 }
 
 @media (hover) {
@@ -229,6 +234,10 @@ strong {
 .goals-title {
 	font-weight: 600;
 	font-size: calc(var(--fs-md) * 1.35);
+}
+
+.goals-text {
+	line-height: 1.5;
 }
 
 
