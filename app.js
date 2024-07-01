@@ -11,7 +11,7 @@ let timerId;
 const updateInfo = () => {
 	const currentDate = new Date()
 	const currentTime = currentDate.toUTCString();
-	const currentDay = currentDate.getUTCDay();
+	const currentDay = currentDate.getDay();
 	document.querySelector(SELECTORS.CURRENT_TIME).textContent = currentTime;
 	document.querySelector(SELECTORS.CURRENT_DAY).textContent = DAYS[currentDay];
 }
